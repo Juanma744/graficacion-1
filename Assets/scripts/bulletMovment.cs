@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CharacteraType{
+    Player,
+    Enemy
+}
 public class bulletMovment : MonoBehaviour
 {
     public Rigidbody2D rb2d;
@@ -18,5 +22,16 @@ public class bulletMovment : MonoBehaviour
     void Update()
     {
         rb2d.velocity = Vector2.right * bulletSpeed*direccion;
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+
+        }
+        else if (other.CompareTag("Player"))
+        {
+
+        }
     }
 }
